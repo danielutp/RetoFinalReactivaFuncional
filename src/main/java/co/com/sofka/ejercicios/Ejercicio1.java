@@ -51,6 +51,16 @@ public class Ejercicio1 {
                 .collect(Collectors.toList()).size());
     }
 
+    public static List<Correo> cambiarEstadoCorreo(){
+        return ListaCorreos.correos.stream()
+                .map(correo -> {
+                   if (correo.getEstadoEnviado()==true) {
+                       correo.setEstadoEnviado(false);
+                       return correo;
+                   } return correo;
+                }).collect(Collectors.toList());
+    }
+
 
 
 }
