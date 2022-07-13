@@ -13,6 +13,20 @@ public class Ejercicio1 {
                 .collect(Collectors.toList());
     }
 
+    public static List<Correo> filtroCorreos(){
+
+        return ListaCorreos.correos.stream()
+                .filter(correo -> correo.getCorreo().contains("@gmail.com")||correo.getCorreo().contains("@hotmail.com")||correo.getCorreo().contains("@outlook.com"))
+                .collect(Collectors.toList());
+    }
+
+    public static List<Correo> filtrarCondiciones(){
+
+        return ListaCorreos.correos.stream()
+                .filter(correo -> correo.getCorreo().matches("^[a-zA-Z0-9_!#$%&'\\*+/=?{|}~^.-]+@[a-zA-Z0-9.-]+$"))
+                .map(correo -> new Correo(correo.getCorreo().toLowerCase(),correo.getEstadoEnviado()))
+                .collect(Collectors.toList());
+    }
 
 
 }
