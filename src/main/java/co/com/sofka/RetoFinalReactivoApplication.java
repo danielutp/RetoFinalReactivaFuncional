@@ -11,7 +11,10 @@ public class RetoFinalReactivoApplication {
 		SpringApplication.run(RetoFinalReactivoApplication.class, args);
 		//Ejercicio1.eliminarRepetidos().forEach(System.out::println);
 		//Ejercicio1.filtroCorreos().forEach(System.out::println);
-		Ejercicio1.filtrarCondiciones().forEach(System.out::println);
+		//Ejercicio1.filtrarCondiciones().forEach(System.out::println);
+		//System.out.println(Ejercicio1.cantidadCorreos());
+		System.out.println(Ejercicio1.cantidadCorreosGmailHotmailOutlook());
+
 
 	}
 

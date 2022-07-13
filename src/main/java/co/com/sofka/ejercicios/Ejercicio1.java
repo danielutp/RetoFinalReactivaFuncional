@@ -28,5 +28,18 @@ public class Ejercicio1 {
                 .collect(Collectors.toList());
     }
 
+    public static Integer cantidadCorreos(){
+        return ListaCorreos.correos.stream()
+                .filter(correo -> correo.getCorreo().matches("^[a-zA-Z0-9_!#$%&'\\*+/=?{|}~^.-]+@[a-zA-Z0-9.-]+$"))
+                .collect(Collectors.toList()).size();
+    }
+
+    public static Integer cantidadCorreosGmailHotmailOutlook(){
+        return ListaCorreos.correos.stream()
+                .filter(correo -> correo.getCorreo().contains("@gmail.com")||correo.getCorreo().contains("@hotmail.com")||correo.getCorreo().contains("@outlook.com"))
+                .collect(Collectors.toList()).size();
+    }
+
+
 
 }
